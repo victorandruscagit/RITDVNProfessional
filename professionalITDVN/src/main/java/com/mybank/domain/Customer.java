@@ -1,35 +1,39 @@
 package com.mybank.domain;
 
+import java.util.ArrayList;
+
 public class Customer {
-    private Account[] accounts;
-    String fullName;
+    private ArrayList<Account> accounts ;
+    String firstName;
+    String lastName;
     int customerNumber;
     private static int customerNumberBase = 1000;
     private int nomOfAccounts;
 
-    public Customer(String fullName) {
-        accounts = new Account[10];
-        this.fullName = fullName;
+    public Customer(String firstName, String lastName) {
+        accounts = new ArrayList<>();
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.customerNumber = customerNumberBase++;
         this.nomOfAccounts = 0;
     }
 
     public Account getAccount(int accNo) {
-        if (accNo < accounts.length && nomOfAccounts != 0) {
-            return accounts[accNo];
+        if (accNo < accounts.size() && nomOfAccounts != 0) {
+            return accounts.get(accNo);
         }
         return null;
     }
 
     public void addAccount(Account acc) {
-        accounts[nomOfAccounts] = acc;
+        accounts.add(acc);
         nomOfAccounts++;
     }
 
     @Override
     public String toString() {
         String s = "Customer: " +
-                fullName +
+                lastName + " " + firstName +
                 ", customerNumber = " + customerNumber +
                 ", nomOfAccounts = " + nomOfAccounts;
         for (int i = 0; i < this.nomOfAccounts; i++) {

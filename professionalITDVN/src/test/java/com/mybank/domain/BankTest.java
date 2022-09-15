@@ -18,8 +18,8 @@ import static org.junit.Assert.*;
 public class BankTest {
     Bank bank = Bank.getBank();
 
-        Customer firstCustomer = new Customer("John Doe");
-        Customer secondCustomer = new Customer("Jane Doe");
+        Customer firstCustomer = new Customer("John", "Doe");
+        Customer secondCustomer = new Customer("Jane ", "Doe");
 
        
     

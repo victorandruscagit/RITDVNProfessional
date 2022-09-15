@@ -1,6 +1,7 @@
 package com.mybank.test;
 
 import com.mybank.domain.*;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -8,8 +9,8 @@ public class TestAccount {
     public static void main(String[] args) {
         Bank bank = Bank.getBank();
 
-        Customer firstCustomer = new Customer("John Doe");
-        Customer secondCustomer = new Customer("Jane Doe");
+        Customer firstCustomer = new Customer("John", " Doe");
+        Customer secondCustomer = new Customer("Jane" ," Doe");
 
         SavingAccount johnSavings = new SavingAccount(1000, 5);
         CheckingAccount johnAccount = new CheckingAccount(5000, 1000);
@@ -27,10 +28,9 @@ public class TestAccount {
         Bank.getCustomer(0).getAccount(0).deposit(2000);
         try {
             Bank.getCustomer(0).getAccount(1).withdraw(9500);
-        }catch(OverdraftException ex){
+        } catch (OverdraftException ex) {
             System.out.println(ex.getMessage() + ": $" + ex.getDeficit() + "!\n");
-        } 
-        catch (Exception ex) {
+        } catch (Exception ex) {
             System.out.println("Something went wrong");
         }
         ((SavingAccount) Bank.getCustomer(0).getAccount(0)).addInterestRate();
