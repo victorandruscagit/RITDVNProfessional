@@ -10,6 +10,10 @@ public class Customer {
     private static int customerNumberBase = 1000;
     private int nomOfAccounts;
 
+    public int getNomOfAccounts() {
+        return nomOfAccounts;
+    }
+
     public Customer(String firstName, String lastName) {
         accounts = new ArrayList<>();
         this.firstName = firstName;
@@ -51,5 +55,11 @@ public class Customer {
         return s;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
 
+    public String getLastName() {
+        return lastName;
+    }
 }
