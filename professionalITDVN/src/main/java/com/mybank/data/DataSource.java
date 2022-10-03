@@ -1,7 +1,6 @@
 package com.mybank.data;
 
 import com.mybank.domain.*;
-import sun.util.resources.cldr.saq.CurrencyNames_saq;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,13 +17,13 @@ public class DataSource {
     public void loadData() throws IOException {
         Bank bank = Bank.getBank();
         Scanner scanner = new Scanner(dataFile);
-        Customer customer = null;
+        Customer customer ;
         int numofCustomers = scanner.nextInt();
         for (int i = 0; i < numofCustomers; i++) {
             String firstName = scanner.next();
             String lastName = scanner.next();
             bank.addCustomer(new Customer(firstName, lastName));
-            bank.getCustomer(i);
+            customer = bank.getCustomer(i);
             int numOfAccounts = scanner.nextInt();
             while (numOfAccounts-- > 0) {
                 char accountType = scanner.next().charAt(0);

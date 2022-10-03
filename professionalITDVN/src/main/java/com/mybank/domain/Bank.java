@@ -35,4 +35,8 @@ public class Bank {
     public static int getNumOfClients() {
         return numOfClients;
     }
+
+    public static ArrayList<Customer> getCustomers() {
+        return customers;
+    }
 }

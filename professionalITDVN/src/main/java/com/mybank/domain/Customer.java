@@ -9,7 +9,7 @@ public class Customer {
     int customerNumber;
     private static int customerNumberBase = 1000;
     private int nomOfAccounts;
-
+   
     public int getNomOfAccounts() {
         return nomOfAccounts;
     }
